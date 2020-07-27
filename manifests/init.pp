@@ -1,7 +1,9 @@
 class strongswan(
-  $package_name = 'strongswan',
-  $config_dir = '/etc/strongswan',
-  $service_name = 'strongswan'
+  String $package_name = 'strongswan',
+  Boolean $manage_package = true,
+  Stdlib::AbsolutePath $config_dir = '/etc/strongswan',
+  String $service_name = 'strongswan',
+  Boolean $manage_service = true,
 ) {
 
   $charon_plugin_config_dir = "${config_dir}/charon"
@@ -12,10 +14,29 @@ class strongswan(
   $swanctl_config_dir = "${swanctl_dir}/conf.d"
   $swanctl_config = "${swanctl_dir}/swanctl.conf"
 
-  Class['strongswan::package']
-  ~>Class['strongswan::config']
-  ~>Class['strongswan::service']
+  include ::strongswan::config
 
-  Strongswan::Charon_plugin <| |>
-  ~>Class['strongswan::service']
+  if $manage_package {
+    include ::strongswan::package
+
+    Class['strongswan::package']
+    ~>Class['strongswan::config']
+  }
+
+  if $manage_service {
+    include ::strongswan::service
+
+    Class['strongswan::config']
+    ~>Class['strongswan::service']
+
+    Strongswan::Conf::Charon <| |>
+    ~>Class['strongswan::service']
+
+    Strongswan::Conf::Swantctl <| |>
+    ~>Class['strongswan::service']
+
+    Strongswan::Conf::Swan <| |>
+    ~>Class['strongswan::service']
+  }
+
 }

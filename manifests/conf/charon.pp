@@ -1,11 +1,9 @@
-define strongswan::charon_plugin(
+define strongswan::conf::charon(
   Hash $options = {}
 ){
   $config_dir = $::strongswan::charon_plugin_config_dir
   $defaults = {
-    $name => {
-      'load' => 'yes',
-    }
+    'load' => 'yes',
   }
 
   file { "${config_dir}/${title}.conf":
