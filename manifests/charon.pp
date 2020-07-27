@@ -7,7 +7,7 @@ class strongswan::charon {
     'des', 'dhcp', 'dnskey', 'drbg', 'duplicheck',
     'eap-aka-3gpp', 'eap-aka-3gpp2', 'eap-aka', 'eap-dynamic', 'eap-gtc', 'eap-identity',
     'eap-md5', 'eap-mschapv2', 'eap-peap', 'eap-radius', 'eap-tls',
-    'eap-tnc', 'eap-ttls', 'ext-auth',
+    'eap-tnc', 'eap-ttls',
     'farp', 'fips-prf',
     'gcm', 'gcrypt', 'gmp',
     'ha', 'hmac',
