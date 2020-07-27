@@ -7,10 +7,10 @@ class strongswan::package {
 
   case $::facts['os']['name'] {
     'Centos': {
-      ensure_package('epel')
+      ensure_packages(['epel-release'])
 
-        Package['epel']
-        ->Package[$package_name]
+      Package['epel-release']
+      ->Package[$package_name]
     }
     default: {}
   }

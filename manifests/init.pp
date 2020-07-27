@@ -2,7 +2,7 @@ class strongswan(
   String $package_name = 'strongswan',
   Boolean $manage_package = true,
   Stdlib::AbsolutePath $config_dir = '/etc/strongswan',
-  String $service_name = 'strongswan',
+  String $service_name = 'strongswan-swanctl',
   Boolean $manage_service = true,
 ) {
 
@@ -32,7 +32,7 @@ class strongswan(
     Strongswan::Conf::Charon <| |>
     ~>Class['strongswan::service']
 
-    Strongswan::Conf::Swantctl <| |>
+    Strongswan::Conf::Swanctl <| |>
     ~>Class['strongswan::service']
 
     Strongswan::Conf::Swan <| |>

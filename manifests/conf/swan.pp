@@ -1,4 +1,4 @@
-define strongswan::conf::swant (
+define strongswan::conf::swan (
   Hash $config = {}
 ){
   file { "${::strongswan::swan_config_dir}/${title}.conf":

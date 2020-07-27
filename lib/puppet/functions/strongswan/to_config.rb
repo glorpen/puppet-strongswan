@@ -18,7 +18,7 @@ Puppet::Functions.create_function(:'strongswan::to_config') do
             else
                 # handle section extends
                 if key.is_a?(Array)
-                    section = "#{key[0]} : #{key[1..].join(', ')}"
+                    section = "#{key[0]} : #{key[1..-1].join(', ')}"
                 else
                     section = key
                 end

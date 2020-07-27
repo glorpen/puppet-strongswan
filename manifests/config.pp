@@ -27,7 +27,7 @@ class strongswan::config {
     'include' => "${::strongswan::swanctl_config_dir}/*.conf"
   }
 
-  file { $::strongswan::strongswan_config:
+  file { $::strongswan::swan_config:
     ensure  => present,
     content => strongswan::to_config($swan_config)
   }
