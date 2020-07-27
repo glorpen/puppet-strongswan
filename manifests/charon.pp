@@ -6,7 +6,7 @@ class strongswan::charon {
     'ccm', 'chapoly', 'cmac', 'constraints', 'counters', 'ctr', 'curl', 'curve25519',
     'des', 'dhcp', 'dnskey', 'drbg', 'duplicheck',
     'eap-aka-3gpp', 'eap-aka-3gpp2', 'eap-aka', 'eap-dynamic', 'eap-gtc', 'eap-identity',
-    'eap-md5', 'eap-mschapv2', 'eap-peap', 'eap-radius', 'eap-sim-file', 'eap-sim', 'eap-tls',
+    'eap-md5', 'eap-mschapv2', 'eap-peap', 'eap-radius', 'eap-tls',
     'eap-tnc', 'eap-ttls', 'ext-auth',
     'farp', 'fips-prf',
     'gcm', 'gcrypt', 'gmp',
