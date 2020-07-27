@@ -18,7 +18,7 @@ class strongswan::charon {
     'newhope', 'nonce', 'openssl',
     'pem', 'pgp', 'pkcs1', 'pkcs11', 'pkcs12', 'pkcs7', 'pkcs8', 'pubkey',
     'random', 'rc2', 'resolve', 'revocation',
-    'sha1', 'sha2', 'socket-default', 'sql', 'sqlite', 'sshkey', 'stroke',
+    'sha1', 'sha2', 'socket-default', 'sql', 'sqlite', 'sshkey',
     'tnc-ifmap', 'tnc-imc', 'tnc-imv', 'tnc-pdp', 'tnc-tnccs', 'tnccs-11', 'tnccs-20',
     'tnccs-dynamic', 'tpm',
     'unity', 'updown',
