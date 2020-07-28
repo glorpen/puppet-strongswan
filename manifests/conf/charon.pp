@@ -6,7 +6,11 @@ define strongswan::conf::charon(
     'load' => 'yes',
   }
 
-  file { "${config_dir}/${title}.conf":
+  $file = file { "${config_dir}/${title}.conf":
     content => strongswan::to_config({$name => merge($defaults, $options)})
+  }
+
+  if $::strongswan::manage_service {
+    $file~>Class['strongswan::service']
   }
 }

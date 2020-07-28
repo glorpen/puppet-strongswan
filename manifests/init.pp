@@ -34,14 +34,14 @@ class strongswan(
     Class['strongswan::config']
     ~>Class['strongswan::service']
 
-    Strongswan::Conf::Charon <| |>
-    ~>Class['strongswan::service']
+    # Strongswan::Conf::Charon <| |>
+    # ~>Class['strongswan::service']
 
     # Strongswan::Conf::Swanctl <| |>
     # ~>Class['strongswan::service']
 
-    Strongswan::Conf::Swan <| |>
-    ~>Class['strongswan::service']
+    # Strongswan::Conf::Swan <| |>
+    # ~>Class['strongswan::service']
   }
 
 }
