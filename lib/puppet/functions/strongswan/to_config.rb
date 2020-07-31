@@ -14,7 +14,7 @@ Puppet::Functions.create_function(:'strongswan::to_config') do
             end.join("\n")
     
             if key === nil
-                return value
+                return value + "\n"
             else
                 # handle section extends
                 if key.is_a?(Array)
